@@ -1,9 +1,25 @@
-public class Guitar {
-
+/**
+ * 
+ * @author Uday Reddy Malgireddy
+ * 
+ */
+public class Guitar  {
+	
   private String serialNumber, builder, model, type, backWood, topWood;
   private double price;
 
-  public Guitar(String serialNumber, double price,
+  /**
+   * 
+   * @param serialNumber
+   * @param price
+   * @param builder
+   * @param model
+   * @param type
+   * @param backWood
+   * @param topWood
+   */
+   
+    public Guitar(String serialNumber, double price,
                 String builder, String model, String type,
                 String backWood, String topWood) {
     this.serialNumber = serialNumber;
@@ -14,29 +30,61 @@ public class Guitar {
     this.backWood = backWood;
     this.topWood = topWood;
   }
+    
+    /**
+     * @return
+     */
 
   public String getSerialNumber() {
     return serialNumber;
   }
+  
+  /**
+   * @return
+   */
 
-  public double getPrice() {
+    public double getPrice() {
     return price;
   }
-  public void setPrice(float newPrice) {
+    /**
+     * 
+     * @param newPrice
+     */
+    public void setPrice(float newPrice) {
     this.price = newPrice;
   }
-  public String getBuilder() {
+  /**
+   * 
+   * @return
+   */
+    public String getBuilder() {
     return builder;
   }
-  public String getModel() {
+    /**
+     * 
+     * @return
+     */
+    public String getModel() {
     return model;
   }
-  public String getType() {
+    /**
+     * 
+     * @return
+     */
+    public String getType() {
     return type;
   }
-  public String getBackWood() {
+    /**
+     * 
+     * @return
+     */
+    public String getBackWood() {
     return backWood;
   }
+    /**
+     * 
+     * @return
+     */
   public String getTopWood() {
     return topWood;
   }

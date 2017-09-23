@@ -1,13 +1,21 @@
+/**
+ * 	Writing a Program to find the guitar which erin likes from the inventory
+ *  As part of first assignment i am documenting the java code which is already written for guitar test
+ *  @author Uday Reddy Malgireddy
+ *  09/11/2017
+ */
 public class FindGuitarTester {
-
-  public static void main(String[] args) {
-    // Set up Rick's guitar inventory
-    Inventory inventory = new Inventory();
-    initializeInventory(inventory);
+ 
+     public static void main(String[] args) {
+     Inventory inventory = new Inventory();
+     initializeInventory(inventory);
 
     Guitar whatErinLikes = new Guitar("", 0, "fender", "Stratocastor", 
                                       "electric", "Alder", "Alder");
     Guitar guitar = inventory.search(whatErinLikes);
+    /**
+     * If guitar class has certain value other than null get the values of the parameters 
+     */
     if (guitar != null) {
       System.out.println("Erin, you might like this " +
         guitar.getBuilder() + " " + guitar.getModel() +  " " +
@@ -15,12 +23,18 @@ public class FindGuitarTester {
         guitar.getBackWood() + " back and sides,\n   " +
         guitar.getTopWood() + " top.\nYou can have it for only $" +
         guitar.getPrice() + "!");
-    } else {
+    } 
+    // If guitar class value equal to null then print the message  
+    else {
       System.out.println("Sorry, Erin, we have nothing for you.");
     }
   }
-
-  private static void initializeInventory(Inventory inventory) {
+     
+/**
+ * @param inventory
+ */
+    
+    private static void initializeInventory(Inventory inventory) {
     inventory.addGuitar("11277", 3999.95, "Collings", "CJ", "acoustic",
                         "Indian Rosewood", "Sitka");
     inventory.addGuitar("V95693", 1499.95, "Fender", "Stratocastor", "electric",
