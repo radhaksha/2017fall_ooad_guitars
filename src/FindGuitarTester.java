@@ -1,16 +1,29 @@
+
 public class FindGuitarTester {
 
+	/**
+	 * main method. entry point for the program.
+	 * @param args
+	 */
   public static void main(String[] args) {
-    // Set up Rick's guitar inventory
+  
+	  /**
+	   * Set up Rick's guitar inventory
+	   */
     Inventory inventory = new Inventory();
+    
     initializeInventory(inventory);
 
-    Guitar whatErinLikes = new Guitar("", 0, "fender", "Stratocastor", 
-                                      "electric", "Alder", "Alder");
+    /**
+     * a new guitar with provided parameters
+     */
+    Guitar whatErinLikes = new Guitar("", 0, "fender", "Stratocastor", "electric", "Alder", "Alder");
+   
+    
     Guitar guitar = inventory.search(whatErinLikes);
-    if (guitar != null) {
-      System.out.println("Erin, you might like this " +
-        guitar.getBuilder() + " " + guitar.getModel() +  " " +
+    
+    if (guitar != null) {     
+    	System.out.println("Erin, you might like this " + guitar.getBuilder() + " " + guitar.getModel() +  " " +
         guitar.getType() + " guitar:\n   " +
         guitar.getBackWood() + " back and sides,\n   " +
         guitar.getTopWood() + " top.\nYou can have it for only $" +
@@ -18,8 +31,15 @@ public class FindGuitarTester {
     } else {
       System.out.println("Sorry, Erin, we have nothing for you.");
     }
+    
   }
 
+  
+  /**
+   * 
+   * @param inventory. Loads all the provided guitar types in guitar's list.
+   * Initialize inventory.
+   */
   private static void initializeInventory(Inventory inventory) {
     inventory.addGuitar("11277", 3999.95, "Collings", "CJ", "acoustic",
                         "Indian Rosewood", "Sitka");
@@ -44,4 +64,8 @@ public class FindGuitarTester {
     inventory.addGuitar("6 29584", 2100.95, "PRS", "Dave Navarro Signature",
                         "electric", "Mahogany", "Maple");
   }
+  
+  
+  
 }
+
