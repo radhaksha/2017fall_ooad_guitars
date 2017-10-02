@@ -1,3 +1,13 @@
+/**
+
+Class: Object-Oriented Design and Analysis
+Professor: Orlando Montalvo
+Assignment: HW 2 (Question 1 and 2)
+Student: Radha Kumari Sharma 
+GitID: radhaksha
+
+*/
+
 import java.util.List;
 
 public class FindGuitarTester {
