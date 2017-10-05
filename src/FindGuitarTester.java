@@ -10,6 +10,16 @@ GitID: radhaksha
 
 import java.util.List;
 
+
+/**
+ * 
+ * This class is a driver class that drives the application.
+ * It has main method which we use to search guitar of specific attributes.
+ * initializeInventory method initialize the guitar inventory with specific guitar attributes.
+ */
+
+
+
 public class FindGuitarTester {
 
 	/**

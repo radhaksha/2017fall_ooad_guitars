@@ -13,6 +13,19 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+
+
+
+/**
+ * This class helps to create Guitar Inventory objects.
+ * Below methods are present in the class.
+ * 
+ * addGuitar Method - adds guitars objects to the guitars list
+ * getGuitar Method - gets guitar object when looked for guitar with a serial number
+ * search    Mehod  - searches if specific guitar is present in list. @Returns ArrayList
+ */
+
+
 public class Inventory<Guitars, backWood> {
  
 

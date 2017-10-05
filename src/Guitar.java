@@ -7,6 +7,14 @@ Student: Radha Kumari Sharma
 GitID: radhaksha
 
 */
+
+
+
+/**
+ * This class helps to create Guitar objects with various attributes.
+ * Various Getters and Setters methods have also been defined.
+ */
+
 public class Guitar {
 
 	  private String serialNumber, model;
@@ -17,7 +25,12 @@ public class Guitar {
 	  private double price;
 	
 	  
-	  
+	  /**
+	   * 
+	   * enum declaration for type backWood.
+	   * backWood can use various values which are as provided in below enum declaration. 
+	   *
+	   */
 	  public enum backWood {
 		  IndianRosewood,
 		  BrazilianRosewood,
@@ -31,6 +44,11 @@ public class Guitar {
 	  }
 	  
 	  
+	  /**
+	   * 
+	   * enum declaration for type topWood.
+	   * topWood can use various values which are as provided in below enum declaration. 
+	   */
 	  public enum topWood {
 		  IndianRosewood,
 		  BrazilianRosewood,
@@ -44,6 +62,10 @@ public class Guitar {
 	  }
 	  
 	  
+	  /**
+	   * enum declaration for type type.
+	   * type can use two values electric and acoustic. 
+	   */	 
 	  
 	  public enum type {
 		  electric,
@@ -51,6 +73,11 @@ public class Guitar {
 	  }
 	  
 	  
+	  
+	  /**
+	   * enum declaration for Guitar builder.
+	   * builder can use values as provided below. 
+	   */
 	  public enum builder{
 		  Fender,
 		  Martin,
