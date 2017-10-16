@@ -1,13 +1,16 @@
-/**
 
-Class: Object-Oriented Design and Analysis
+
+/**
+ 
+ Object-Oriented Design and Analysis
 Professor: Orlando Montalvo
-Assignment: HW 2 (Question 1 and 2)
+Assignment: HW 2 
 Student: Radha Kumari Sharma 
 GitID: radhaksha
 
 */
 
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -28,34 +31,42 @@ public class FindGuitarTester {
 	  /**
 	   * Set up Rick's guitar inventory
 	   */
-    Inventory<Guitar,Guitar.backWood> inventory = new Inventory<Guitar,Guitar.backWood>();
+    Inventory<Guitar> inventory = new Inventory<Guitar>();
     
     initializeInventory(inventory);
 
-   
+
+      
+      
+    
     
     /**
      * Search guitar with 1 or 2 attributes and also with price
      */
-    Guitar whatErinLikes = new Guitar("", 1499.95, Guitar.builder.Fender, "Stratocastor", Guitar.type.acoustic, Guitar.backWood.Alder, Guitar.topWood.Alder);
+//    Guitar whatErinLikes = new Guitar("", 1499.95, Guitar.builder.Fender, "Stratocastor", Guitar.type.acoustic, Guitar.backWood.Alder, Guitar.topWood.Alder);
+    
+    GuitarSpec whatErinLikes = new GuitarSpec(Guitar.builder.Fender, "Stratocastor", Guitar.type.acoustic, Guitar.backWood.Alder, Guitar.topWood.Alder);
     
     List<Guitar> guitars = inventory.search(whatErinLikes);
-    System.out.println("Here are all available guitars: \n");
-    for(Guitar mygitar : guitars){ 	
-    	if (mygitar != null) {   		
-    		System.out.println("\n"+"No. "+(guitars.indexOf(mygitar)+1) +" Guitar: "+"\n");
-        	System.out.println("Erin, you might like this " + mygitar.getBuilder() + " " + mygitar.getModel() +  " " +
-            mygitar.getType() + " guitar:\n   " +
-            mygitar.getBackWood() + " back and sides,\n   " +
-            mygitar.getTopWood() + " top.\nYou can have it for only $" +
-            mygitar.getPrice() + "!");	       	
-      }else{
+    System.out.println("Here are all available guitars: \n");	
+    if (guitars != null) {   
+    for (Iterator<Guitar> i = guitars.iterator(); i.hasNext(); ) {
+   	        Guitar guitar = (Guitar)i.next();
+  	        GuitarSpec spec = guitar.getSpec();
+    		//System.out.println("\n"+"No. "+(guitars.indexOf(mygitar)+1) +" Guitar: "+"\n");
+        	System.out.println("Erin, you might like this " + spec.getBuilder() + " " + spec.getModel() +  " " +
+        			spec.getType() + " guitar:\n   " +
+        			spec.getBackWood() + " back and sides,\n   " +
+        			spec.getTopWood() + " top.\nYou can have it for only $" +
+        			guitar.getPrice() + "!");
+      }
+    
+       }else{
     	  System.out.println("Sorry, Erin, we have nothing for you.");
       }
     	  
-    } 	
+  } 	
     
-  }
 
   
   
@@ -65,7 +76,7 @@ public class FindGuitarTester {
    * Initialize inventory.
    */
   
-private static void initializeInventory(Inventory inventory) {
+private static void initializeInventory(Inventory<Guitar> inventory) {
     inventory.addGuitar("11277", 3999.95,   Guitar.builder.Collings, "CJ", Guitar.type.acoustic, Guitar.backWood.BrazilianRosewood, Guitar.topWood.BrazilianRosewood);
     
     inventory.addGuitar("V95693", 1499.95,  Guitar.builder.Fender,  "Stratocastor", Guitar.type.acoustic, Guitar.backWood.Alder, Guitar.topWood.Alder);

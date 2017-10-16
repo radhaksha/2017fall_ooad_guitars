@@ -2,7 +2,7 @@
 
 Class: Object-Oriented Design and Analysis
 Professor: Orlando Montalvo
-Assignment: HW 2 (Question 1 and 2)
+Assignment: HW 2
 Student: Radha Kumari Sharma 
 GitID: radhaksha
 
@@ -16,15 +16,12 @@ GitID: radhaksha
  */
 
 public class Guitar {
-
-	  private String serialNumber, model;
-	  backWood backwood_type;
-	  topWood topwood_type;
-	  type guitar_type;
-	  builder guitar_builder;
+	  private String serialNumber;
 	  private double price;
+	  GuitarSpec spec;
 	
 	  
+	
 	  /**
 	   * 
 	   * enum declaration for type backWood.
@@ -102,11 +99,7 @@ public class Guitar {
 	  public Guitar(String serialNumber, double price, builder guitar_builder, String model, type guitar_type, backWood backwood_type, topWood topwood_type) {
 	    this.serialNumber = serialNumber;
 	    this.price = price;
-	    this.guitar_builder = guitar_builder;
-	    this.model = model;
-	    this.guitar_type = guitar_type;
-	    this.backwood_type = backwood_type;
-	    this.topwood_type = topwood_type;
+	    this.spec = new GuitarSpec(guitar_builder, model, guitar_type, backwood_type, topwood_type);
 	  }
 	
 	  
@@ -126,58 +119,14 @@ public class Guitar {
 	  public double getPrice() {
 	    return price;
 	  }
-
-	  
-	  /** 
-	   * @param newPrice to set. Setting price for guitar.
-	   */
-	  public void setPrice(float newPrice) {
-	    this.price = newPrice;
-	  }
 	  
 	  
 	  /**
 	   * 
-	   * @return builder of the guitar
-	   */	  
-	  public builder getBuilder() {
-	    return guitar_builder;
-	  }
-	  
-	  
-	  /**
-	   * 
-	   * @return model
+	   * @return return guitarSpec
 	   */
-	  public String getModel() {
-	    return model;
+	  public GuitarSpec getSpec() {
+		  	return spec;
 	  }
-	  
-	  
-	  /**
-	   * @return type of guitar
-	   */
-	  public type getType() {
-	    return guitar_type;
-	  }
-	  
-	  
-	  /**
-	   * 
-	   * @return BackWood of guitar
-	   */
-	  public backWood getBackWood() {
-	    return backwood_type;
-	  }
-	  
-	  
-	  /**
-	   * 
-	   * @return TopWood of guitar
-	   */
-	  public topWood getTopWood() {
-	    return topwood_type;
-	  }
-
 
 }
