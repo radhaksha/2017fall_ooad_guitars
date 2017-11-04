@@ -87,13 +87,13 @@ public class Guitar {
 	  
 	  /**
 	   * This is a parameterized constructor.
-	   * @param serialNumber
-	   * @param price
-	   * @param builder
-	   * @param model
-	   * @param type
-	   * @param backWood
-	   * @param topWood
+	   * @param serialNumber,this is the serial Number of  guitar.
+	   * @param price. this is the price of guitar.
+	   * @param builder. this is the builder of guitar
+	   * @param model. This is the model name of the guitar.
+	   * @param type. This is the type of guitar.
+	   * @param backWood. This is the type of  backWood of guitar
+	   * @param topWood. This is the type of topWood of guitar.
 	   */
 	  
 	  public Guitar(String serialNumber, double price, builder guitar_builder, String model, type guitar_type, backWood backwood_type, topWood topwood_type) {

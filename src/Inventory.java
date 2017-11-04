@@ -44,14 +44,15 @@ public class Inventory<Guitars> {
   
 	/**
 	 * This method adds new guitars to the list guitars.
-	 * @param serialNumber
-	 * @param price
-	 * @param builder
-	 * @param model
-	 * @param type
-	 * @param backWood
-	 * @param topWood
+	 * @param serialNumber,this is the serial Number of  guitar.
+	   * @param price. This is the price of guitar.
+	   * @param builder. This is the builder of guitar
+	   * @param model. This is the model name of the guitar.
+	   * @param type. This is the type of guitar.
+	   * @param backWood. This is the type of  backWood of guitar
+	   * @param topWood. This is the type of topWood of guitar.
 	 */
+	
 	
 	public void addGuitar(String serialNumber, double price, Guitar.builder guitar_builder, String model, Guitar.type guitar_type, Guitar.backWood backwood_type, Guitar.topWood topwood_type)  {		
 		Guitar guitar = new Guitar(serialNumber, price, guitar_builder, model, guitar_type, backwood_type, topwood_type);		
@@ -63,9 +64,11 @@ public class Inventory<Guitars> {
 
 	/**
 	 * 
-	 * @param serialNumber. Takes serialNumber and returns guitar matching the provided serialNumber
-	 * @return guitar
+	 * Takes serialNumber and returns guitar matching the provided serialNumber
+	 * @return guitar. Returns a guitar object
+	 * @param serialNumber. Input to the method is serial number of guitar
 	 */
+	
 	public Guitar getGuitar(String serialnumber) {
     
 		for (Iterator<Guitar> i = guitars.iterator(); i.hasNext();) {				
@@ -80,8 +83,9 @@ public class Inventory<Guitars> {
 	
 	/**
 	 * 
-	 * @param searchGuitar. Checks for builder, model, type, backWood and topWood of the provided guitar.
-	 * @return guitar
+	 * Checks for builder, model, type, backWood and topWood of the provided guitar.
+	 * @return List<Guitar> . Returns list containing guitars
+	 *  @param GuitarSpec . We are passing object of GuitarSpec.
 	 */
 	
 	public List<Guitar> search(GuitarSpec searchSpec) {
@@ -110,8 +114,8 @@ public class Inventory<Guitars> {
 	
 	/**
 	 * This method returns guitars that falls between given price p1 and p2
-	 * @param p1
-	 * @param p2
+	 * @param p1. This is the minimum price of guitar.
+	 * @param p2. This is the maximum price of guitar.
 	 * @return List of Guitar objects
 	 */
 	public List<Guitar> getGuitarByPrice(double p1,double p2) {

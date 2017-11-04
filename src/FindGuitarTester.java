@@ -24,7 +24,7 @@ public class FindGuitarTester {
 
 	/**
 	 * main method. entry point for the program.
-	 * @param args
+	 * @param args are unused in this method.
 	 */
   public static void main(String[] args) {
   
@@ -43,13 +43,15 @@ public class FindGuitarTester {
     /**
      * Search guitar with 1 or 2 attributes and also with price
      */
-//    Guitar whatErinLikes = new Guitar("", 1499.95, Guitar.builder.Fender, "Stratocastor", Guitar.type.acoustic, Guitar.backWood.Alder, Guitar.topWood.Alder);
     
-    GuitarSpec whatErinLikes = new GuitarSpec(Guitar.builder.Fender, "Stratocastor", Guitar.type.acoustic, Guitar.backWood.Alder, Guitar.topWood.Alder);
     
+    //Guitar whatErinLikes = new Guitar("", 1499.95, Guitar.builder.Fender, "Stratocastor", Guitar.type.acoustic, Guitar.backWood.Alder, Guitar.topWood.Alder);    
+    //GuitarSpec whatErinLikes = new GuitarSpec(Guitar.builder.Fender, "Stratocastor", Guitar.type.acoustic, Guitar.backWood.Alder, Guitar.topWood.Alder);
+    GuitarSpec whatErinLikes = new GuitarSpec(Guitar.builder.Fender, "Stratocast", Guitar.type.electric, Guitar.backWood.Mahogany, Guitar.topWood.Adirondack);    
+   
     List<Guitar> guitars = inventory.search(whatErinLikes);
-    System.out.println("Here are all available guitars: \n");	
-    if (guitars != null) {   
+    if (guitars != null && !(guitars.isEmpty())) {
+    System.out.println("Here are all available guitars: \n");
     for (Iterator<Guitar> i = guitars.iterator(); i.hasNext(); ) {
    	        Guitar guitar = (Guitar)i.next();
   	        GuitarSpec spec = guitar.getSpec();
@@ -72,8 +74,9 @@ public class FindGuitarTester {
   
   /**
    * 
-   * @param inventory. Loads all the provided guitar types in guitar's list.
+   * . Loads all the provided guitar types in guitar's list.
    * Initialize inventory.
+   * @param inventory
    */
   
 private static void initializeInventory(Inventory<Guitar> inventory) {

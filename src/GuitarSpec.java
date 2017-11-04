@@ -1,6 +1,18 @@
+/**
+ * 
+ *Class: Object-Oriented Design and Analysis
+ *
+ */
+ 
+ /**
+  * 
+  * This guitarspec class creates guitar objects with all the attributes of Guitar except serial number and price.
+  *  THis helps to find guitars with matching attributes.   
+  *
+  */
 
 
-public class GuitarSpec {
+    public class GuitarSpec {
 	
 	
 	  private String model;
@@ -12,13 +24,12 @@ public class GuitarSpec {
 	  
 	  /**
 	   * This is a parameterized constructor.
-	   * @param serialNumber
-	   * @param price
-	   * @param builder
-	   * @param model
-	   * @param type
-	   * @param backWood
-	   * @param topWood
+	  
+	   * @param builder. this is the builder of guitar
+	   * @param model. This is the model name of the guitar.
+	   * @param type. This is the type of guitar.
+	   * @param backWood. This is the type of  backWood of guitar
+	   * @param topWood. This is the type of topWood of guitar.
 	   */
 	  
 	  public GuitarSpec(Guitar.builder guitar_builder2, String model, Guitar.type guitar_type, Guitar.backWood backwood_type, Guitar.topWood topwood_type) {
@@ -33,7 +44,11 @@ public class GuitarSpec {
 	  
 
 
-
+      /**
+       * This method tries to match guitarspec object of GuitarSpec class against list or other provided guitars.
+       * @return boolean value. It returns true or false value.
+       * @param otherspec. Object of GuitarSpec class
+       */
 	  public boolean matches(GuitarSpec otherspec) {
 		  if (guitar_builder !=otherspec.guitar_builder) {
 			  return false;
